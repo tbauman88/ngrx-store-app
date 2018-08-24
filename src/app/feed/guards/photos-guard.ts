@@ -22,9 +22,7 @@ export class PhotoGuard implements CanActivate {
     return this.store.pipe(
       select(fromStore.getPhotoLoaded),
       tap(loaded => {
-        if (!loaded) {
-          this.store.dispatch(new fromStore.LoadPhotos());
-        }
+        if (!loaded) this.store.dispatch(new fromStore.LoadPhotos());
       }),
       filter(loaded => loaded),
       take(1)

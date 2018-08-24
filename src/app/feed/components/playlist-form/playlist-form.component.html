@@ -1,0 +1,41 @@
+<div class="playlist-form">
+  <form [formGroup]="form">
+    <label>
+      <h4>Playlist name</h4>
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="e.g. Top Hits"
+        class="playlist-form__input"
+        [class.error]="nameControlInvalid"
+      >
+      <div *ngIf="nameControlInvalid" class="playlist-form__error">
+        <p>Pizza must have a name</p>
+      </div>
+    </label>
+
+    <ng-content></ng-content>
+
+    <label>
+      <h4>Select songs</h4>
+    </label>
+
+    <div class="playlist-form__list">
+      <app-playlist-songs [songs]="songs" formControlName="songs"></app-playlist-songs>
+    </div>
+
+    <div class="playlist-form__actions">
+      <button *ngIf="!exists" type="button" class="btn btn__ok" (click)="createPlaylist(form)">
+        Create Playlist
+      </button>
+
+      <button *ngIf="exists" type="button" class="btn btn__ok" (click)="updatePlaylist(form)">
+        Save changes
+      </button>
+
+      <button *ngIf="exists" type="button" class="btn btn__warning" (click)="removePlaylist(form)">
+        Delete Playlist
+      </button>
+    </div>
+  </form>
+</div>

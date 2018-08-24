@@ -1,0 +1,11 @@
+<div class="playlist-songs">
+  <div
+    *ngFor="let song of songs;"
+    class="pizza-songs-item"
+    (click)="selectSong(song)"
+    [class.active]="existsInSongs(song)"
+  >
+    <img src="/assets/img/toppings/singles/{{ song.name }}.svg">
+    {{ song.name }}
+  </div>
+</div>

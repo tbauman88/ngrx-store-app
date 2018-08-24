@@ -1,26 +1,32 @@
 import { NgModule } from '@angular/core';
 import {
+  MatToolbarModule,
   MatButtonModule,
-  MatCardModule,
+  MatSidenavModule,
   MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatCardModule,
   MatProgressSpinnerModule,
   MatSlideToggleModule,
   MatSnackBarModule,
   MatTooltipModule,
-  MatToolbarModule,
   MatInputModule
 } from '@angular/material';
 
 export const components: any[] = [
-  MatCardModule,
-  MatButtonModule,
   MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
   MatIconModule,
-  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatCardModule,
   MatProgressSpinnerModule,
   MatSlideToggleModule,
   MatSnackBarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatInputModule
 ];
 
 @NgModule({

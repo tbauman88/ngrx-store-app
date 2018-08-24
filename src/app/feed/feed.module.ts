@@ -13,16 +13,21 @@ import * as fromContainers from './containers';
 import * as fromGuards from './guards';
 import * as fromServices from './services';
 
-import { MaterialModule } from '../material/material.module';
-
 export const routes: Routes = [
   {
     path: '',
-    canActivate: [fromGuards.PhotoGuard],
+    canActivate: [fromGuards.PlaylistGuard, fromGuards.PhotoGuard],
     component: fromContainers.FeedComponent
   },
   {
-    path: ':photoId'
+    path: 'new',
+    canActivate: [fromGuards.PlaylistGuard, fromGuards.SongsGuard],
+    component: fromContainers.FeedItemComponent
+  },
+  {
+    path: ':playlistId',
+    canActivate: [fromGuards.PlaylistExistsGuard, fromGuards.SongsGuard],
+    component: fromContainers.FeedItemComponent
   }
 ];
 
@@ -31,7 +36,6 @@ export const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MaterialModule,
     FormsModule,
     RouterModule.forChild(routes),
     StoreModule.forFeature('feed', reducers),

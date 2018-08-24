@@ -1,0 +1,12 @@
+<div class="feed__item">
+  <app-playlist-form
+    [playlist]="playlist$ | async"
+    [songs]="songs$ | async"
+    (selected)="onSelect($event)"
+    (create)="onCreate($event)"
+    (update)="onUpdate($event)"
+    (remove)="onRemove($event)"
+  >
+    <app-playlist-display [playlist]="visualise$ | async"></app-playlist-display>
+  </app-playlist-form>
+</div>

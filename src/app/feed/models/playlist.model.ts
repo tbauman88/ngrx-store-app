@@ -1,7 +1,8 @@
+import { Song } from './song.model';
+
 export interface Playlist {
   id?: number;
-  avatar?: string;
   name?: string;
-  rank?: string;
-  img?: string;
+  image?: string;
+  songs?: Song[];
 }

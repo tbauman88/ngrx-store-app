@@ -20,6 +20,21 @@
         }
       ],
       "id": 1
+    },
+    {
+      "name": "Top Hits",
+      "image": "",
+      "songs": [
+        {
+          "id": 1,
+          "name": "In My Feelings"
+        },
+        {
+          "id": 2,
+          "name": "Tequila"
+        }
+      ],
+      "id": 2
     }
   ]
 }

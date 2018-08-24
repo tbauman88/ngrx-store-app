@@ -12,7 +12,7 @@ export class PlaylistsService {
 
   getPlaylists() {
     return this.http
-      .get<Playlist[]>(`/api/playlists`)
+      .get<Playlist[]>(`http://localhost:3000/playlists`)
       .pipe(
         catchError(
           (error: any) =>

@@ -3,16 +3,12 @@
     background: #fff;
   }
 
-  &__nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    border-bottom: 1px solid #CCCCCC;
-    box-shadow: 1px 1px 1px 1px #CCCCCC;
+  &__nav-link {
+    color: white;
+    text-decoration: none;
   }
 
   &__container {
-    padding: 35px;
+    padding: 32px;
   }
 }

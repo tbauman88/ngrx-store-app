@@ -9,7 +9,7 @@ import { Photos } from '../models/photos.model';
 
 @Injectable()
 export class PhotosService {
-  unsplash_api: string = 'https://api.unsplash.com/photos/curated';
+  unsplash_api: string = 'https://api.unsplash.com/photos';
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +19,7 @@ export class PhotosService {
       environment.UNSPLASH_API_ID
     );
     let params = new HttpParams();
-    (params = params.append('per_page', '30')),
+    (params = params.append('per_page', '12')),
       (params = params.append('order_by', 'popular'));
 
     return this.http

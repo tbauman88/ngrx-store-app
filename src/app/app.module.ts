@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LayoutModule } from '@angular/cdk/layout';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -10,6 +11,7 @@ import {
 import { StoreModule, MetaReducer } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, effects, CustomSerializer } from './store';
+import { MaterialModule } from './material/material.module';
 
 import { AppComponent } from './containers/app/app.component';
 
@@ -36,6 +38,8 @@ export const ROUTES: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    LayoutModule,
+    MaterialModule,
     RouterModule.forRoot(ROUTES),
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(effects),

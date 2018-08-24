@@ -19,8 +19,7 @@ export class PlaylistGuard implements CanActivate {
   }
 
   checkStore(): Observable<boolean> {
-    return this.store.pipe(
-      select(fromStore.getPlaylistLoaded),
+    return this.store.pipe(select(fromStore.getPlaylistLoaded)).pipe(
       tap(loaded => {
         if (!loaded) {
           this.store.dispatch(new fromStore.LoadPlaylists());

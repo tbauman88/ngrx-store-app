@@ -1,8 +1,9 @@
 import * as fromPlaylists from '../actions/playlist.actions';
 import { Playlist } from '../../models/playlist.model';
+import { Song } from '../../models/song.model';
 
 export interface PlaylistState {
-  entities: { [id: string]: Playlist };
+  entities: { [id: number]: Playlist };
   loaded: boolean;
   loading: boolean;
 }
@@ -28,8 +29,8 @@ export function reducer(
     case fromPlaylists.LOAD_PLAYLISTS_SUCCESS: {
       const playlists = action.payload;
 
-      const entities = action.payload.reduce(
-        (entities: { [id: string]: Playlist }, playlist: Playlist) => {
+      const entities = playlists.reduce(
+        (entities: { [id: number]: Playlist }, playlist: Playlist) => {
           return {
             ...entities,
             [playlist.id]: playlist

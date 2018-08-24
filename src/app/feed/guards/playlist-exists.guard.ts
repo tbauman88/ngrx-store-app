@@ -22,16 +22,14 @@ export class PlaylistExistsGuard implements CanActivate {
   }
 
   hasPlaylist(id: number): Observable<boolean> {
-    return this.store.pipe(
-      select(fromStore.getPlaylistEntities),
+    return this.store.select(fromStore.getPlaylistEntities).pipe(
       map((entities: { [key: number]: Playlist }) => !!entities[id]),
       take(1)
     );
   }
 
   checkStore(): Observable<boolean> {
-    return this.store.pipe(
-      select(fromStore.getPlaylistLoaded),
+    return this.store.select(fromStore.getPlaylistLoaded).pipe(
       tap(loaded => {
         if (!loaded) {
           this.store.dispatch(new fromStore.LoadPlaylists());
