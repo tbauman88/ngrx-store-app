@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  UNSPLASH_API_ID:
+    'Client-ID 616eb5f2d7bff1b34634d8e1bcf465fc57a8d0be5d517ecdd2c648f909adac7e'
 };
 
 /*

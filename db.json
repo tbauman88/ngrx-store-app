@@ -1,0 +1,25 @@
+{
+  "songs": [
+    {
+      "id": 1,
+      "name": "In My Feelings"
+    },
+    {
+      "id": 2,
+      "name": "Tequila"
+    }
+  ],
+  "playlists": [
+    {
+      "name": "Country on the Radio",
+      "image": "",
+      "songs": [
+        {
+          "id": 2,
+          "name": "Tequila"
+        }
+      ],
+      "id": 1
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<div class="card__container">
+  <img class="card__photo" [src]="photo.urls.small" alt='Image taken by {{ photo.name }}'>
+  <div class="card__likes"></div>
+  <div class="card__meta">
+    <img class="card__user-image" [src]="photo.user.profile_image.medium" alt="Photo of {{ photo.name }}">
+    <ng-container *ngIf="photo.user.instagram_username; then insta; else name"></ng-container>
+
+    <ng-template #insta>
+      <span>@{{ photo.user.instagram_username }}</span>
+    </ng-template>
+    <ng-template #name>
+      <span>{{ photo.user.name }}</span>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="feed__content">
+  <div *ngIf="!((photos$ | async)?.length)">
+    No photos are available at this time.
+  </div>
+
+  <app-card
+    *ngFor="let photo of (photos$ | async)"
+    [photo]="photo">
+  </app-card>
+</div>
