@@ -1,7 +1,6 @@
 <h1 align="center">Angular Playlist App</h1>
 <h4 align="center">
     Project application for a NGRX application using Angular, NGRX Store.
-    [![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://prettier.io/)
 </h4>
 
 ---
@@ -10,6 +9,8 @@
 
 To architect an application using the [Angular CLI](https://github.com/angular/angular-cli)
 and [NGRX Store](https://github.com/ngrx/platform/blob/master/docs/store/).
+
+[![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://prettier.io/)
 
 ## Resources
 
