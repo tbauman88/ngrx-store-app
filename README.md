@@ -1,11 +1,10 @@
 <h1 align="center">Angular Playlist App</h1>
-<h4 align="center">Project application for a NGRX application using Angular, NGRX Store.</h4>
+<h4 align="center">
+    Project application for a NGRX application using Angular, NGRX Store.
+    [![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://prettier.io/)
+</h4>
 
 ---
-
-# Angular Playlist Project
-
-[![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://prettier.io/)
 
 ## Purpose
 
