@@ -19,8 +19,8 @@ export class PhotosService {
       environment.UNSPLASH_API_ID
     );
     let params = new HttpParams();
-    (params = params.append('per_page', '12')),
-      (params = params.append('order_by', 'popular'));
+    (params = params.append('per_page', '24')),
+      (params = params.append('order_by', 'latest'));
 
     return this.http
       .get<Photos[]>(this.unsplash_api, { headers, params })

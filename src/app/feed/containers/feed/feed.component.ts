@@ -12,10 +12,12 @@ import * as fromStore from '../../store';
 })
 export class FeedComponent implements OnInit {
   playlists$: Observable<any>;
+  photos$: Observable<any>;
 
   constructor(private store: Store<fromStore.FeedState>) {}
 
   ngOnInit() {
     this.playlists$ = this.store.pipe(select(fromStore.getAllPlaylists));
+    this.photos$ = this.store.pipe(select(fromStore.getAllPhotos));
   }
 }

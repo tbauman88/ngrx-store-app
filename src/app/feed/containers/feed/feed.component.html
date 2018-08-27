@@ -14,3 +14,19 @@
     </app-playlist-item>
   </div>
 </ng-container>
+
+<hr>
+
+<ng-container *ngIf="(photos$ | async) as photos">
+  <h4 class="feed__title">Followers ({{ photos?.length }})</h4>
+  <div class="feed__content">
+    <div *ngIf="!(photos?.length)">
+      No photos are available at this time.
+    </div>
+
+    <app-card
+      *ngFor="let photo of photos"
+      [photo]="photo">
+    </app-card>
+  </div>
+</ng-container>
