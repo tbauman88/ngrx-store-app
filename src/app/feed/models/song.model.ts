@@ -1,5 +1,8 @@
 export interface Song {
   id?: number;
-  name?: string;
+  name: string;
+  time?: string;
+  artist?: string;
+  album?: string;
   [key: string]: any;
 }

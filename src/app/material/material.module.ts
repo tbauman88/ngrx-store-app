@@ -1,37 +1,33 @@
 import { NgModule } from '@angular/core';
 import {
   MatToolbarModule,
+  MatTableModule,
   MatButtonModule,
-  MatSidenavModule,
   MatIconModule,
   MatListModule,
   MatMenuModule,
-  MatCardModule,
   MatProgressSpinnerModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatTooltipModule,
-  MatInputModule
+  MatInputModule,
+  MatIconRegistry
 } from '@angular/material';
+import { CdkTableModule } from '@angular/cdk/table';
 
 export const components: any[] = [
   MatToolbarModule,
+  MatTableModule,
   MatButtonModule,
-  MatSidenavModule,
   MatIconModule,
   MatListModule,
   MatMenuModule,
-  MatCardModule,
   MatProgressSpinnerModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatTooltipModule,
-  MatInputModule
+  MatInputModule,
+  MatIconModule,
+  CdkTableModule
 ];
 
 @NgModule({
   imports: [components],
   exports: [components],
-  declarations: []
+  providers: [MatIconRegistry]
 })
 export class MaterialModule {}

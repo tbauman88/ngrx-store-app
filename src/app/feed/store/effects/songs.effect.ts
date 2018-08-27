@@ -18,8 +18,6 @@ export class SongsEffects {
   loadSongs$ = this.actions$.pipe(
     ofType(songsActions.LOAD_SONGS),
     switchMap(() => {
-      console.log('service');
-
       return this.songsService.getSongs().pipe(
         map(songs => new songsActions.LoadSongsSuccess(songs)),
         catchError(error => of(new songsActions.LoadSongsFail(error)))

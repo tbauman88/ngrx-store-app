@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { transition, style, animate, trigger } from '@angular/animations';
 
 import { Playlist } from '../../models/playlist.model';
@@ -29,6 +29,8 @@ export const DROP_ANIMATION = trigger('drop', [
 export class PlaylistDisplayComponent implements OnInit {
   @Input()
   playlist: Playlist;
+
+  displayedColumns: string[] = ['position', 'name', 'time'];
 
   constructor() {}
 

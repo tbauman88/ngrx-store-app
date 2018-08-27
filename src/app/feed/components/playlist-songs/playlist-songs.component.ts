@@ -26,6 +26,7 @@ export class PlaylistSongsComponent implements ControlValueAccessor {
   songs: Song[] = [];
 
   value: Song[] = [];
+  displayedColumns: string[] = ['add', 'name', 'artist', 'album', 'time'];
 
   private onTouch: Function;
   private onModelChange: Function;

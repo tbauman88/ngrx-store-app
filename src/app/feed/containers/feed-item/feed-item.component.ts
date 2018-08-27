@@ -15,8 +15,9 @@ import { Song } from '../../models/song.model';
 })
 export class FeedItemComponent implements OnInit {
   playlist$: Observable<Playlist>;
-  visualise$: Observable<Playlist>;
+  photos$: Observable<any>;
   songs$: Observable<Song[]>;
+  visualise$: Observable<Playlist>;
 
   constructor(private store: Store<fromStore.FeedState>) {}
 
@@ -29,6 +30,7 @@ export class FeedItemComponent implements OnInit {
         this.store.dispatch(new fromStore.VisualiseSongs(songs));
       })
     );
+    this.photos$ = this.store.pipe(select(fromStore.getAllPhotos));
     this.songs$ = this.store.pipe(select(fromStore.getAllSongs));
     this.visualise$ = this.store.pipe(select(fromStore.getPlaylistVisualised));
   }

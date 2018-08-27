@@ -11,8 +11,6 @@ export class SongsService {
   constructor(private http: HttpClient) {}
 
   getSongs(): Observable<Song[]> {
-    console.log('service');
-
     return this.http
       .get<Song[]>(`http://localhost:3000/songs`)
       .pipe(

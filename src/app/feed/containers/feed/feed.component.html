@@ -1,9 +1,9 @@
 <ng-container *ngIf="(playlists$ | async) as playlists">
-  <div class="products__new">
+  <div class="pl__new">
     <a class="btn btn__ok" routerLink="./new">New Playlist</a>
   </div>
 
-  <div class="products__list">
+  <div class="pl__list">
     <div *ngIf="!(playlists?.length)">
       No playlists, add one to get started.
     </div>
@@ -12,18 +12,5 @@
       *ngFor="let playlist of playlists"
       [playlist]="playlist">
     </app-playlist-item>
-  </div>
-</ng-container>
-
-<ng-container *ngIf="(photos$ | async) as photos">
-  <div class="feed__content">
-    <div *ngIf="!(photos?.length)">
-      No photos are available at this time.
-    </div>
-
-    <app-card
-      *ngFor="let photo of photos"
-      [photo]="photo">
-    </app-card>
   </div>
 </ng-container>

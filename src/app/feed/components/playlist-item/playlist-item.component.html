@@ -1,8 +1,20 @@
-<div class="playlist-item">
-  <a [routerLink]="['/feed', playlist.id]">
-    <app-playlist-display [playlist]="playlist"></app-playlist-display>
-    <h4>{{ playlist.name }}</h4>
-    <h6 *ngFor="let song of playlist.songs">{{ song.name }}</h6>
-    <button type="button" class="btn btn__ok">View Playlist</button>
+<div class="pl-item">
+  <a class="pl-item__link" [routerLink]="['/feed', playlist.id]">
+    <div class="pl-item__img-wrapper">
+      <ng-container *ngIf="playlist?.image; then image; else placeholder"></ng-container>
+
+      <ng-template #placeholder>
+        <i class="material-icons pl-item__icon">library_music</i>
+      </ng-template>
+
+      <ng-template #image>
+        <img
+          class="pl-item__img"
+          [style.background-image]="'url('+ playlist.image +')'"
+        >
+      </ng-template>
+    </div>
+    <h4 class="pl-item__title">{{ playlist.name }}</h4>
+    <span class="pl-item__meta">{{ playlist.songs?.length }} Songs</span>
   </a>
 </div>

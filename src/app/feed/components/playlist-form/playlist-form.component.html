@@ -1,41 +1,52 @@
-<div class="playlist-form">
-  <form [formGroup]="form">
-    <label>
-      <h4>Playlist name</h4>
-      <input
-        type="text"
-        formControlName="name"
-        placeholder="e.g. Top Hits"
-        class="playlist-form__input"
-        [class.error]="nameControlInvalid"
+<form [formGroup]="form" class="pl-form">
+  <label>
+    <h4 class="pl-form__header">Playlist</h4>
+    <input
+      type="text"
+      formControlName="name"
+      placeholder="e.g. Top Hits"
+      class="pl-form__input"
+      [class.error]="nameControlInvalid"
+    >
+    <div *ngIf="nameControlInvalid" class="pl-form__error">
+      <p class="error__text">Playlist must have a name</p>
+    </div>
+  </label>
+
+  <div class="pl-form__img-wrapper">
+    <ng-container *ngIf="playlist?.image; then image; else placeholder"></ng-container>
+
+    <ng-template #placeholder>
+      <i class="material-icons pl-form__icon">add_a_photo</i>
+    </ng-template>
+
+    <ng-template #image>
+      <img
+        *ngIf="playlist?.image"
+        class="pl-form__img"
+        [style.background-image]="'url('+ playlist.image +')'"
       >
-      <div *ngIf="nameControlInvalid" class="playlist-form__error">
-        <p>Pizza must have a name</p>
-      </div>
-    </label>
+    </ng-template>
+  </div>
 
-    <ng-content></ng-content>
+  <ng-content></ng-content>
 
-    <label>
-      <h4>Select songs</h4>
-    </label>
+  <h4 class="pl-form__header">Recommended Songs</h4>
 
-    <div class="playlist-form__list">
-      <app-playlist-songs [songs]="songs" formControlName="songs"></app-playlist-songs>
-    </div>
+  <div class="pl-form__list">
+    <app-playlist-songs [songs]="songs" formControlName="songs"></app-playlist-songs>
+  </div>
 
-    <div class="playlist-form__actions">
-      <button *ngIf="!exists" type="button" class="btn btn__ok" (click)="createPlaylist(form)">
-        Create Playlist
-      </button>
+  <div class="pl-form__actions">
+    <ng-container *ngIf="exists; then save; else create"></ng-container>
 
-      <button *ngIf="exists" type="button" class="btn btn__ok" (click)="updatePlaylist(form)">
-        Save changes
-      </button>
+    <ng-template #save>
+      <button type="button" class="btn btn__warning" (click)="removePlaylist(form)">Delete</button>
+      <button type="button" class="btn btn__success" (click)="updatePlaylist(form)">Save</button>
+    </ng-template>
 
-      <button *ngIf="exists" type="button" class="btn btn__warning" (click)="removePlaylist(form)">
-        Delete Playlist
-      </button>
-    </div>
-  </form>
-</div>
+    <ng-template #create>
+      <button type="button" class="btn btn__success" (click)="createPlaylist(form)">Create</button>
+    </ng-template>
+  </div>
+</form>

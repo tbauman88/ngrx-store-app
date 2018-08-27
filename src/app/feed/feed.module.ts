@@ -12,6 +12,7 @@ import * as fromComponents from './components';
 import * as fromContainers from './containers';
 import * as fromGuards from './guards';
 import * as fromServices from './services';
+import { MaterialModule } from '../material/material.module';
 
 export const routes: Routes = [
   {
@@ -37,6 +38,7 @@ export const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MaterialModule,
     RouterModule.forChild(routes),
     StoreModule.forFeature('feed', reducers),
     EffectsModule.forFeature(effects)

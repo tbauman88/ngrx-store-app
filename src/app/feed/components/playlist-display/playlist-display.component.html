@@ -1,11 +1,38 @@
-<div class="playlist-display">
-  <div class="playlist-display__base">
-    <!--<img src="/assets/img/pizza.svg">-->
-    <!--<img-->
-      <!--*ngFor="let song of playlist?.songs; index as i;"-->
-      <!--src="/assets/img/toppings/{{ song.name }}.svg"-->
-      <!--[style.zIndex]="i"-->
-      <!--class="playlist-display__song"-->
-      <!--@drop>-->
-  </div>
+<div class="pl__display">
+  <mat-table [dataSource]="playlist?.songs">
+    <ng-container cdkColumnDef="position">
+      <mat-header-cell *cdkHeaderCellDef class="pl__value"></mat-header-cell>
+      <mat-cell *cdkCellDef="let song" class="pl__value">
+        {{ song.id }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="name">
+      <mat-header-cell *cdkHeaderCellDef class="pl__value">
+        Title
+      </mat-header-cell>
+      <mat-cell *cdkCellDef="let song" class="pl__value">
+        {{ song.name }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="time">
+      <mat-header-cell *cdkHeaderCellDef class="pl__value">
+        Time
+      </mat-header-cell>
+      <mat-cell *cdkCellDef="let song" class="pl__value">
+        {{ song.time }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
 </div>
+
+<ng-container *ngIf="playlist?.songs?.length < 1">
+  <div class="pl__empty">
+    <h4 class="pl__empty-title">This playlist is currently empty</h4>
+    <p class="pl__empty-text">Find more of the music you love among our Recommendations.</p>
+  </div>
+</ng-container>

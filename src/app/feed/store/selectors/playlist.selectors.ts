@@ -21,7 +21,7 @@ export const getSelectedPlaylist = createSelector(
   getPlaylistEntities,
   fromRoot.getRouterState,
   (entities, router): Playlist => {
-    return router.state && entities[router.state.params.photoId];
+    return router.state && entities[router.state.params.playlistId];
   }
 );
 

@@ -22,7 +22,6 @@ export function reducer(
   switch (action.type) {
     case fromSongs.VISUALISE_SONGS: {
       const selectedSongs = action.payload;
-      console.log(action.payload);
 
       return {
         ...state,
@@ -31,8 +30,6 @@ export function reducer(
     }
 
     case fromSongs.LOAD_SONGS: {
-      console.log('reducer');
-
       return {
         ...state,
         loading: true
@@ -41,7 +38,6 @@ export function reducer(
 
     case fromSongs.LOAD_SONGS_SUCCESS: {
       const songs = action.payload;
-      console.log(songs);
 
       const entities = songs.reduce(
         (entities: { [id: number]: Song }, song: Song) => {
@@ -54,8 +50,6 @@ export function reducer(
           ...state.entities
         }
       );
-
-      console.log(songs);
 
       return {
         ...state,

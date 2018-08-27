@@ -2,39 +2,200 @@
   "songs": [
     {
       "id": 1,
-      "name": "In My Feelings"
+      "name": "In My Feelings",
+      "time": "3:57",
+      "artist": "Drake",
+      "album": "Scorpion"
     },
     {
       "id": 2,
-      "name": "Tequila"
+      "name": "Tequila",
+      "time": "3:16",
+      "artist": "Dan + Shay",
+      "album": "Dan + Shay"
+    },
+    {
+      "id": 3,
+      "name": "Girls Like You",
+      "time": "3:55",
+      "artist": "Maroon 5, Cardi B",
+      "album": "Red Pills Blues"
+    },
+    {
+      "id": 4,
+      "name": "No Brainer",
+      "time": "4:20",
+      "artist": "DJ Khaled, Hystin Bieber, Quavo, Chance the Rapper",
+      "album": "No Brainer"
+    },
+    {
+      "id": 5,
+      "name": "Freaky Friday",
+      "time": "3:36",
+      "artist": "Lil Dicky, Chris Brown",
+      "album": "Freaky Friday"
+    },
+    {
+      "id": 6,
+      "name": "All Of It",
+      "time": "3:38",
+      "artist": "Cole Swindell",
+      "album": "All Of It"
+    },
+    {
+      "id": 7,
+      "name": "I Don't Know About You",
+      "time": "3:28",
+      "artist": "Chris Lane",
+      "album": "Laps Around The Sun"
+    },
+    {
+      "id": 8,
+      "name": "Feathered Indians",
+      "time": "3:45",
+      "artist": "Tyler Childers",
+      "album": "Purgatory"
     }
   ],
   "playlists": [
     {
       "name": "Country on the Radio",
-      "image": "",
+      "image": "https://picsum.photos/300?image=16",
       "songs": [
         {
           "id": 2,
           "name": "Tequila"
+        },
+        {
+          "id": 6,
+          "name": "All Of It",
+          "time": "3:38",
+          "artist": "Cole Swindell",
+          "album": "All Of It"
+        },
+        {
+          "id": 7,
+          "name": "I Don't Know About You",
+          "time": "3:28",
+          "artist": "Chris Lane",
+          "album": "Laps Around The Sun"
+        },
+        {
+          "id": 8,
+          "name": "Feathered Indians",
+          "time": "3:45",
+          "artist": "Tyler Childers",
+          "album": "Purgatory"
         }
       ],
       "id": 1
     },
     {
-      "name": "Top Hits",
-      "image": "",
+      "name": "Hot Hits Canada",
+      "image": "https://picsum.photos/300?image=44",
       "songs": [
         {
           "id": 1,
           "name": "In My Feelings"
         },
         {
+          "id": 3,
+          "name": "Girls Like You",
+          "time": "3:55",
+          "artist": "Maroon 5, Cardi B",
+          "album": "Red Pills Blues"
+        },
+        {
           "id": 2,
-          "name": "Tequila"
+          "name": "Tequila",
+          "time": "3:16",
+          "artist": "Dan + Shay",
+          "album": "Dan + Shay"
+        },
+        {
+          "id": 5,
+          "name": "Freaky Friday",
+          "time": "3:36",
+          "artist": "Lil Dicky, Chris Brown",
+          "album": "Freaky Friday"
+        },
+        {
+          "id": 4,
+          "name": "No Brainer",
+          "time": "4:20",
+          "artist": "DJ Khaled, Hystin Bieber, Quavo, Chance the Rapper",
+          "album": "No Brainer"
         }
       ],
       "id": 2
+    },
+    {
+      "name": "Random Playlist",
+      "image": "https://picsum.photos/300/?random",
+      "songs": [
+        {
+          "id": 1,
+          "name": "In My Feelings",
+          "time": "3:57",
+          "artist": "Drake",
+          "album": "Scorpion"
+        },
+        {
+          "id": 4,
+          "name": "No Brainer",
+          "time": "4:20",
+          "artist": "DJ Khaled, Hystin Bieber, Quavo, Chance the Rapper",
+          "album": "No Brainer"
+        },
+        {
+          "id": 7,
+          "name": "I Don't Know About You",
+          "time": "3:28",
+          "artist": "Chris Lane",
+          "album": "Laps Around The Sun"
+        },
+        {
+          "id": 6,
+          "name": "All Of It",
+          "time": "3:38",
+          "artist": "Cole Swindell",
+          "album": "All Of It"
+        },
+        {
+          "id": 2,
+          "name": "Tequila",
+          "time": "3:16",
+          "artist": "Dan + Shay",
+          "album": "Dan + Shay"
+        },
+        {
+          "id": 3,
+          "name": "Girls Like You",
+          "time": "3:55",
+          "artist": "Maroon 5, Cardi B",
+          "album": "Red Pills Blues"
+        },
+        {
+          "id": 5,
+          "name": "Freaky Friday",
+          "time": "3:36",
+          "artist": "Lil Dicky, Chris Brown",
+          "album": "Freaky Friday"
+        },
+        {
+          "id": 8,
+          "name": "Feathered Indians",
+          "time": "3:45",
+          "artist": "Tyler Childers",
+          "album": "Purgatory"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "New",
+      "songs": [],
+      "id": 4
     }
   ]
 }

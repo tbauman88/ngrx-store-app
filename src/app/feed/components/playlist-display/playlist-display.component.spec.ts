@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlaylistDisplayComponent } from './playlist-display.component';
+import { MatTableModule } from '@angular/material';
 
 describe('PlaylistDisplayComponent', () => {
   let component: PlaylistDisplayComponent;
@@ -8,7 +9,8 @@ describe('PlaylistDisplayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PlaylistDisplayComponent]
+      declarations: [PlaylistDisplayComponent],
+      imports: [MatTableModule]
     }).compileComponents();
   }));
 

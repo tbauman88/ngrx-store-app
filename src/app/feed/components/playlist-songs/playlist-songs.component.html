@@ -1,11 +1,41 @@
-<div class="playlist-songs">
-  <div
-    *ngFor="let song of songs;"
-    class="pizza-songs-item"
-    (click)="selectSong(song)"
-    [class.active]="existsInSongs(song)"
-  >
-    <img src="/assets/img/toppings/singles/{{ song.name }}.svg">
-    {{ song.name }}
-  </div>
-</div>
+<mat-table [dataSource]="songs">
+  <ng-container cdkColumnDef="add">
+    <mat-header-cell *cdkHeaderCellDef class="table__value"></mat-header-cell>
+    <mat-cell *cdkCellDef="let song" class="table__value" (click)="selectSong(song)">
+      <button class="btn" [class.active]="existsInSongs(song)">
+        Add
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container cdkColumnDef="name">
+    <mat-header-cell *cdkHeaderCellDef class="table__value">Title</mat-header-cell>
+    <mat-cell *cdkCellDef="let song" class="table__value">
+      {{ song.name }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container cdkColumnDef="artist">
+    <mat-header-cell *cdkHeaderCellDef class="table__value">Artist</mat-header-cell>
+    <mat-cell *cdkCellDef="let song" class="table__value">
+      {{ song.artist }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container cdkColumnDef="album">
+    <mat-header-cell *cdkHeaderCellDef class="table__value">Album</mat-header-cell>
+    <mat-cell *cdkCellDef="let song" class="table__value">
+      {{ song.album }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container cdkColumnDef="time">
+    <mat-header-cell *cdkHeaderCellDef class="table__value">Time</mat-header-cell>
+    <mat-cell *cdkCellDef="let song" class="table__value">
+      {{ song.time }}
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

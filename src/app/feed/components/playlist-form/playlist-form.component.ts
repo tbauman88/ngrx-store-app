@@ -3,8 +3,7 @@ import {
   EventEmitter,
   Input,
   OnChanges,
-  Output,
-  SimpleChanges
+  Output
 } from '@angular/core';
 import {
   FormBuilder,
@@ -16,6 +15,7 @@ import { map } from 'rxjs/operators';
 
 import { Playlist } from '../../models/playlist.model';
 import { Song } from '../../models/song.model';
+import { Photos } from '../../models/photos.model';
 
 @Component({
   selector: 'app-playlist-form',
@@ -24,10 +24,12 @@ import { Song } from '../../models/song.model';
 })
 export class PlaylistFormComponent implements OnChanges {
   exists = false;
+
   @Input()
   playlist: Playlist;
   @Input()
   songs: Song[];
+
   @Output()
   selected = new EventEmitter<number[]>();
   @Output()
@@ -52,11 +54,12 @@ export class PlaylistFormComponent implements OnChanges {
     return this.nameControl.hasError('required') && this.nameControl.touched;
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     if (this.playlist && this.playlist.id) {
       this.exists = true;
       this.form.patchValue(this.playlist);
     }
+
     this.form
       .get('songs')
       .valueChanges.pipe(map(songs => songs.map((song: Song) => song.id)))

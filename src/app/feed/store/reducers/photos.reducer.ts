@@ -28,8 +28,6 @@ export function reducer(
     case fromPhotos.LOAD_PHOTOS_SUCCESS: {
       const photos = action.payload;
 
-      console.log(photos);
-
       const entities = photos.reduce(
         (entities: { [id: string]: Photos }, photo: Photos) => {
           return {
@@ -41,8 +39,6 @@ export function reducer(
           ...state.entities
         }
       );
-
-      console.log(entities);
 
       return {
         ...state,
