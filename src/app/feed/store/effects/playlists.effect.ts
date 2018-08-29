@@ -50,7 +50,7 @@ export class PlaylistEffects {
   );
 
   @Effect()
-  updatePlaylist = this.actions$.pipe(
+  updatePlaylist$ = this.actions$.pipe(
     ofType(playlistsAction.UPDATE_PLAYLIST),
     map((action: playlistsAction.UpdatePlaylist) => action.payload),
     switchMap(playlist => {
@@ -62,7 +62,7 @@ export class PlaylistEffects {
   );
 
   @Effect()
-  removePlaylist = this.actions$.pipe(
+  removePlaylist$ = this.actions$.pipe(
     ofType(playlistsAction.REMOVE_PLAYLIST),
     map((action: playlistsAction.RemovePlaylist) => action.payload),
     switchMap(playlist => {
