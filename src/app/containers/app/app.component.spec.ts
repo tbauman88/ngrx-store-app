@@ -1,27 +1,28 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { MatToolbarModule } from '@angular/material';
+
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { StoreModule } from '@ngrx/store';
+
+import { metaReducers } from '../../app.module';
+import { reducers } from '../../store';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent]
+      declarations: [AppComponent],
+      imports: [
+        RouterTestingModule,
+        StoreModule.forRoot(reducers, { metaReducers }),
+        MatToolbarModule
+      ]
     }).compileComponents();
   }));
-  it('should create the app', async(() => {
+
+  it('should create ', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  }));
-  it(`should have as title 'angular-playlist-app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('angular-playlist-app');
-  }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to angular-playlist-app!'
-    );
   }));
 });

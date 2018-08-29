@@ -96,7 +96,7 @@ describe('Playlist Selectors', () => {
       imports: [
         StoreModule.forRoot({
           ...fromRoot.reducers,
-          products: combineReducers(fromReducers.reducers)
+          feed: combineReducers(fromReducers.reducers)
         })
       ]
     });
@@ -183,14 +183,14 @@ describe('Playlist Selectors', () => {
       let params;
 
       const songs = [
-        { id: 4, name: 'No Brainer' },
+        { id: 4, name: 'Freaky Friday' },
         { id: 3, name: 'Girls Like You' },
-        { id: 5, name: 'Freaky Friday' }
+        { id: 5, name: 'No Brainer' }
       ];
 
       store.dispatch(new fromActions.LoadPlaylistsSuccess(playlists));
       store.dispatch(new fromActions.LoadSongsSuccess(songs));
-      store.dispatch(new fromActions.VisualiseSongs([4, 3, 5]));
+      store.dispatch(new fromActions.VisualiseSongs([5, 3, 4]));
 
       store.dispatch({
         type: 'ROUTER_NAVIGATION',

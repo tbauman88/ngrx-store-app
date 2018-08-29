@@ -36,9 +36,9 @@ describe('Songs Selectors', () => {
   ];
 
   const entities = {
-    1: songs[0],
-    2: songs[1],
-    3: songs[2]
+    3: songs[0],
+    4: songs[1],
+    5: songs[2]
   };
 
   beforeEach(() => {
@@ -46,7 +46,7 @@ describe('Songs Selectors', () => {
       imports: [
         StoreModule.forRoot({
           ...fromRoot.reducers,
-          products: combineReducers(fromReducers.reducers)
+          feed: combineReducers(fromReducers.reducers)
         })
       ]
     });

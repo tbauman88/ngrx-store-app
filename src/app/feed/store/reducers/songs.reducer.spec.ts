@@ -34,9 +34,9 @@ describe('Songs Reducer', () => {
       ];
 
       const entities = {
-        1: songs[0],
-        2: songs[1],
-        3: songs[2]
+        4: songs[0],
+        3: songs[1],
+        5: songs[2]
       };
 
       const { initialState } = fromSongs;

@@ -1,6 +1,6 @@
 import * as fromSongs from './songs.actions';
 
-describe('Toppings Actions', () => {
+describe('Songs Actions', () => {
   describe('LoadSongs Actions', () => {
     describe('LoadSongs', () => {
       it('should create an action', () => {
