@@ -15,7 +15,6 @@ import { map } from 'rxjs/operators';
 
 import { Playlist } from '../../models/playlist.model';
 import { Song } from '../../models/song.model';
-import { Photos } from '../../models/photos.model';
 
 @Component({
   selector: 'app-playlist-form',

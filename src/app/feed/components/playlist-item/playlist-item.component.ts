@@ -13,7 +13,7 @@ import {
 })
 export class PlaylistItemComponent implements OnInit {
   @Input()
-  playlist: any;
+  playlist: any = [];
 
   constructor() {}
 

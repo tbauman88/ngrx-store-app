@@ -1,13 +1,13 @@
 <div class="card__container">
-  <img class="card__photo" [src]="photo.user.profile_image.large" alt='Image taken by {{ photo.name }}'>
+  <img class="card__photo" [src]="photo.user?.profile_image.large" alt='Image taken by {{ photo.name }}'>
   <div class="card__meta">
-    <ng-container *ngIf="photo.user.instagram_username; then insta; else name"></ng-container>
+    <ng-container *ngIf="photo.user?.instagram_username; then insta; else name"></ng-container>
 
     <ng-template #insta>
-      <span>@{{ photo.user.instagram_username }}</span>
+      <span>@{{ photo.user?.instagram_username }}</span>
     </ng-template>
     <ng-template #name>
-      <span>{{ photo.user.name }}</span>
+      <span>{{ photo.user?.name }}</span>
     </ng-template>
   </div>
 </div>
